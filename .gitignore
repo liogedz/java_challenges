@@ -1,0 +1,18 @@
+# === IDEs / Editors ===
+.idea/
+.vscode/
+*.sublime-workspace
+*.launch
+*.classpath
+*.project
+.settings/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+.nb-gradle/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+*.iml
