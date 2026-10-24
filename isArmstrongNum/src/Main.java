@@ -7,7 +7,13 @@ public static int getLen(int num) {
 }
 
 public static int getSum(int num, int power) {
-    return num == 0 ? 0 : (int) Math.pow(num % 10, power) + getSum(num / 10, power);
+    return num == 0 ? 0 : getPow(num % 10, power) + getSum(num / 10, power);
+}
+
+public static int getPow(int num, int power) {
+    if (power == 0) return 1;
+    int halfPower = getPow(num, power / 2);
+    return power % 2 == 1 ? num * halfPower * halfPower : halfPower * halfPower;
 }
 
 //public static boolean isArm(int num) {
@@ -23,4 +29,5 @@ public static int getSum(int num, int power) {
 
 void main() {
     IO.println(isArm(93084));
+//    IO.println(getPow(2, 3));
 }
