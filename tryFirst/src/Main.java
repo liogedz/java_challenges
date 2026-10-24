@@ -1,17 +1,7 @@
-public static int solution(String str) {
-    str = str.toLowerCase();
-    int[] counts = new int[26];
-    for (int i = 0; i < str.length(); i++) {
-        counts[str.charAt(i) - 'a']++;
-    }
-    for (int i = 0; i < str.length(); i++) {
-        if (counts[str.charAt(i) - 'a'] == 1) {
-            return i;
-        }
-    }
-    return -1;
+public static String solution(String str, int num) {
+    return num == 1 ? str : solution(str, num - 1) + '\n' + str.repeat(num);
 }
 
 void main() {
-    IO.println(solution("Mesmerising"));
+    IO.println(solution("*", 10));
 }
