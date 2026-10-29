@@ -16,18 +16,21 @@ public static int getPow(int num, int power) {
     return power % 2 == 1 ? num * halfPower * halfPower : halfPower * halfPower;
 }
 
-//public static boolean isArm(int num) {
-//    int saved = num;
-//    int sum = 0;
-//    int power = String.valueOf(num).length();
-//    while (num > 0) {
-//        sum += (int) Math.pow(num % 10, power);
-//        num /= 10;
-//    }
-//    return sum == saved;
-//}
+public boolean isArmstrong(int number) {
+    int original = number;
+    int sum = 0;
+    int digits = String.valueOf(number).length();
+    while (number > 0) {
+        int digit = number % 10;
+        sum += (int) Math.pow(digit, digits);
+        number /= 10;
+    }
+    return sum == original;
+}
 
 void main() {
+    long start = System.nanoTime();
     IO.println(isArm(93084));
-//    IO.println(getPow(2, 3));
+    long end = System.nanoTime();
+    IO.println(end - start);
 }
